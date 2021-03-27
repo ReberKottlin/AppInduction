@@ -6,11 +6,11 @@ git config --local user.name
 ```
 * 增
 ```
-git config  --local --add user.name "xxx"'
+git config --local --add user.name "xxx"'
 ```
 * 删
 ```
-git config  --local --unset user.name
+git config --local --unset user.name
 ```
 * 改
 ```
