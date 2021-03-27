@@ -1,2 +1,29 @@
 include ':app'
 rootProject.name = "AppInduction"
+
+gradle.ext.applicationId = "com.app.induction"
+gradle.ext.compileSdkVersion = 30
+gradle.ext.buildToolsVersion = "30.0.2"
+gradle.ext.minSdkVersion = 16
+gradle.ext.targetSdkVersion = 30
+gradle.ext.versionCode = 1
+gradle.ext.versionName = "1.0"
+
+// kotlin
+gradle.ext.kotlinVersion = "1.4.21"
+
+// test
+gradle.ext.testJunit = "4.13.2"
+gradle.ext.androidxTestJunit = "1.1.2"
+gradle.ext.androidxTestEspressoCore = "3.3.0"
+
+// androidx
+gradle.ext.androidxCoreKtx = "1.2.0"
+gradle.ext.androidxAppcompat = "1.2.0"
+gradle.ext.androidxAnnotation = "1.1.0"
+gradle.ext.androidxConstraintlayout = "2.0.4"
+gradle.ext.androidxLifecycleLivedataKtx = "2.2.0"
+gradle.ext.androidxLifecycleViewmodelKtx = "2.2.0"
+
+// google
+gradle.ext.googleMaterial = "1.1.0"

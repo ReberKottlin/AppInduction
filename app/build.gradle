@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion gradle.compileSdkVersion
+    buildToolsVersion gradle.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.app.induction"
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        applicationId gradle.applicationId
+        minSdkVersion gradle.minSdkVersion
+        targetSdkVersion gradle.targetSdkVersion
+        versionCode gradle.versionCode
+        versionName gradle.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,15 +34,17 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.1.0'
-    implementation 'androidx.annotation:annotation:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$gradle.kotlinVersion"
+    implementation "com.google.android.material:material:$gradle.googleMaterial"
+
+    implementation "androidx.core:core-ktx:$gradle.androidxCoreKtx"
+    implementation "androidx.appcompat:appcompat:$gradle.androidxAppcompat"
+    implementation "androidx.annotation:annotation:$gradle.androidxAnnotation"
+    implementation "androidx.constraintlayout:constraintlayout:$gradle.androidxConstraintlayout"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$gradle.androidxLifecycleLivedataKtx"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$gradle.androidxLifecycleViewmodelKtx"
+
+    testImplementation "junit:junit:$gradle.testJunit"
+    androidTestImplementation "androidx.test.ext:junit:$gradle.androidxTestJunit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$gradle.androidxTestEspressoCore"
 }
