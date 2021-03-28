@@ -1,4 +1,3 @@
-include ':GitCommand'
 include ':app'
 rootProject.name = "AppInduction"
 
