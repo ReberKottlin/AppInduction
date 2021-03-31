@@ -68,7 +68,14 @@ git log --oneline -4          // 当前分支
 git log <master> --oneline -4 // master分支
 ```
 
-## 六、git reflog 代码上传
+## 六、git reflog 恢复本地操作/误操作
+git reflog 可以查看所有分支的所有操作记录（包括（包括commit和reset的操作），包括已经被删除的commit记录
+```
+git reflog -n // 查看最近的n条操作记录
+// 当操作失误后，根据操作记录恢复，可以如下操作：
+git reset --hard <reflogId> // 回退到指定的操作记录位置
+git cherry-pick <reflogId>  // pick一个需要的操作记录到当前分支
+```
 
 ## 七、git tag 版本标签
 * **查看标签**
@@ -117,10 +124,10 @@ git commit --amend --no-edit // 将当前git add后的的内容插入到最近�
 ## 十、git rebase 变基-合并Commit
 * **rebase的commit合并**
 ```
-git rebase <branchName>
-git rebase <commitId>
-git rebase -i HEAD~n // 最近提交的n个commit合并
-git rebase -i <startCommitId> <endCommitId> // 多个提交CommitId合并
+git rebase <branchName> // 合并branchName分支到当前分支
+git rebase <commitId>   // 合并提交commintId之前的内容到当前分支
+git rebase -i HEAD~n    // 最近提交的n个commit合并
+git rebase -i <startCommitId> <endCommitId> // 多个提交CommitId范围合并
 ```
 
 * **冲突后的持续命令**
@@ -133,3 +140,5 @@ git rebase -i <startCommitId> <endCommitId> // 多个提交CommitId合并
 ## 十二、git reset 回退版本
 ## 十三、git pull/fetch 代码更新
 ## 十四、git push 代码上传
+## 十五、git cherry-pick 代码上传
+git cherry-pick <commitId>
