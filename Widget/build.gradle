@@ -8,7 +8,7 @@ android {
     buildToolsVersion gradle.buildToolsVersion
 
     defaultConfig {
-        applicationId gradle.applicationIdApp
+        applicationId gradle.applicationIdWidget
         minSdkVersion gradle.minSdkVersion
         targetSdkVersion gradle.targetSdkVersion
         versionCode gradle.versionCode

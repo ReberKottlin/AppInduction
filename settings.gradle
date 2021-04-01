@@ -1,6 +1,9 @@
+include ':Widget'
 include ':app'
 rootProject.name = "AppInduction"
 
+gradle.ext.applicationIdApp = "com.app.induction"
+gradle.ext.applicationIdWidget = "com.app.induction.widget"
 gradle.ext.applicationId = "com.app.induction"
 gradle.ext.compileSdkVersion = 30
 gradle.ext.buildToolsVersion = "30.0.2"
