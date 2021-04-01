@@ -137,7 +137,21 @@ git rebase -i <startCommitId> <endCommitId> // 多个提交CommitId范围合并
 --merge 进行rebase操作的时候，同时使用merge进行代码合并
 
 ## 十一、git revert 撤销提交
+如果revert后，修改完冲突，可执行git revert --continue/abort
+```
+git revert <commitId>         // revert指定的commitId
+git revert X..Y               // X...Y，代表一个左开右闭区间(X,Y],不包括X,包括Y. 其中Y为起点commit，X为终点commit的下一个commit
+git revert <cmmitId> -m <1/2> // revert指定的merge commitId
+```
+
 ## 十二、git reset 回退版本
+```
+git reset // 把添加到暂缓区的文件移除入工作区
+git reset --mixed <commitId> // 回退到指定的commit位置，并将commit之后的改动放入工作区
+git reset --hard <commitId>  // 回退到指定的commit位置，并将commit之后的改动移除
+git reset --soft <commitId>  // 回退到指定的commit位置，并将commit之后的改动放入暂缓区
+```
+
 ## 十三、git pull/fetch 代码更新
 ## 十四、git push 代码上传
 ## 十五、git cherry-pick 代码上传
