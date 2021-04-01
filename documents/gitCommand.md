@@ -11,8 +11,8 @@ git pull origin <master> --allow-unrelated-histories
 ## 二、git remote 远程版本库
 ```
 git remote add <origin> https://xxx.git     // 添加仓库关联
-git remote -v                             // 查看仓库关联列表
-git remote rename <origin> <newOrigin>        // 修改仓库关联名称
+git remote -v                               // 查看仓库关联列表
+git remote rename <origin> <newOrigin>      // 修改仓库关联名称
 git remote remove <origin>                  // 删除远程仓库的关联
 git remote set-url <origin> https://xxx.git // 更新远程仓库的url
 ```
@@ -153,6 +153,22 @@ git reset --soft <commitId>  // 回退到指定的commit位置，并将commit之
 ```
 
 ## 十三、git pull/fetch 代码更新
+pull到效果与fetch+merge的效果是相同的，在其他分支需要merge主分支文件，建议使用fetch/merge
+```
+git pull --rebase 
+git fetch <origin> <branchName> // 将远程分支branchName的文件更新到本地仓库缓存区
+git merge <origin/master>       // 将本地仓库缓存区的最新文件merge同步到本地仓库
+```
+
 ## 十四、git push 代码上传
+```
+git push <origin> <branchName>             // 将代码提交到远程分支
+git push <origin> <branchName> --force(-f) // 覆盖提交，多人开发建议不要用，引发冲突问题
+git push origin --delete <branchName>      // 通过push删除远程分支
+```
+
 ## 十五、git cherry-pick 代码上传
-git cherry-pick <commitId>
+```
+git cherry-pick <commitId>               // 将其他分支的某个commit复制到当前分支
+git cherry-pick -n <commitId> <commitId> // 将其他分支的多个commit复制到当前分支
+```
