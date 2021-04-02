@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SimpleSquareWidget">
+        <!--设置默认的大小-->
+        <attr name="defaultSize" format="dimension" />
+    </declare-styleable>
+</resources>

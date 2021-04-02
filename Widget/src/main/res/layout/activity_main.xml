@@ -15,4 +15,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.app.induction.widget.SimpleSquareWidget
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:defaultSize="100dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
